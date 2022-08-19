@@ -1,0 +1,47 @@
+import React, { Component } from 'react';
+import { BrowserRouter ,Routes, Route, Link } from 'react-router-dom';
+import Home from    './pages/Home';
+import About from   './pages/About';
+import Contact from './pages/Contact';
+import Profile from './pages/Profile';
+import Post from    './pages/Post';
+//import './App.css';
+  
+function App() {
+    return (
+
+	    <BrowserRouter>
+           <div className="App">
+            <ul className="App-header">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
+	      <li>
+                <Link to="/profile">Profile </Link>
+              </li>
+              <li>
+                <Link to="/post/13?first=david&last=ostrowski">Post </Link>
+              </li>
+
+
+	    </ul>
+            <Routes> 
+	        <Route exact path='/' element={< Home />}></Route>
+                <Route exact path='/about' element={< About />}></Route>
+       		<Route exact path='/contact' element={< Contact />}></Route>
+       		<Route exact path='/profile' element={< Profile />}></Route>
+          i     <Route exact path='/post/:id' element={< Post />}></Route>
+	    </Routes>
+
+          </div>
+       </BrowserRouter>
+   );
+}
+  
+export default App;
